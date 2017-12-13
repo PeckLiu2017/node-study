@@ -19,8 +19,10 @@ router.use(function(req,res,next) {
   next();
 });
 
+// 查询 query 字符串
 router.get('/', function(req, res) {
-  res.send('<h1>Hello World</h1>');
+  // res.send('<h1>Hello World</h1>');
+  res.json({message: 'Hello ' + req.query.name});
 });
 
 router.get('/:name', function(req, res) {
